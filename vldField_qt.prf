@@ -1,0 +1,29 @@
+
+include ( ./vldField_qtconfig.pri )
+include ( ./vldField_qtfunctions.pri )
+
+contains(VLDFIELD_QT_CONFIG, vldField_qtDll) {
+
+    DEFINES *= VLDFIELD_QT_DLL
+}
+
+contains(VLDFIELD_QT_CONFIG, vldField_qtSvg) {
+
+	QT      *= svg
+}
+else {
+
+	DEFINES *= VLDFIELD_QT_NO_SVG
+}
+
+contains(VLDFIELD_QT_CONFIG, vldField_qtFramework) {
+
+    INCLUDEPATH *= $${VLDFIELD_QT_INSTALL_LIBS}/vldField_qt.framework/Headers
+}
+else {
+
+    INCLUDEPATH *= $${VLDFIELD_QT_INSTALL_HEADERS}
+}   
+
+# QMAKE_RPATHDIR *= $${VLDFIELD_QT_INSTALL_LIBS}
+vldField_qtAddLibrary($${VLDFIELD_QT_INSTALL_LIBS}, vldField_qt)
