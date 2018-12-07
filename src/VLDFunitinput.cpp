@@ -229,7 +229,7 @@ void VLDFUnitInput::setUnitType(const EUnitType & unittp) {
     } 
     else if (fUnitType == EPermeability) {
         fDisplayUnit->addItem("darcy", QVariant("m^2"));
-        fDisplayUnit->addItem("millydarcy", QVariant("m^2"));
+        fDisplayUnit->addItem("milidarcy", QVariant("m^2"));
         fDisplayUnit->addItem("m^2", QVariant("m^2"));
     }
     else if (fUnitType == EDimensionless) {
