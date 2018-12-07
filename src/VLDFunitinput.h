@@ -25,7 +25,7 @@ class VLDFUnitInput : public QWidget
 
 public:
 
-    enum EUnitType {EPressure, EPPG, EDimension, EAngle, EDimensionless, EInvertedPressure};
+    enum EUnitType {EPressure, EPPG, EDimension, EAngle, EDimensionless, EInvertedPressure, EPermeability};
 	
 	QComboBox *fDisplayUnit;
 

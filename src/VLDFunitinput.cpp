@@ -226,11 +226,17 @@ void VLDFUnitInput::setUnitType(const EUnitType & unittp) {
     } else if (fUnitType == EAngle) {
         fDisplayUnit->addItem("radian", QVariant("radian"));
         fDisplayUnit->addItem("degree", QVariant("radian"));
-    } else if (fUnitType == EDimensionless) {
+    } 
+    else if (fUnitType == EPermeability) {
+        fDisplayUnit->addItem("darcy", QVariant("m^2"));
+        fDisplayUnit->addItem("millydarcy", QVariant("m^2"));
+        fDisplayUnit->addItem("m^2", QVariant("m^2"));
+    }
+    else if (fUnitType == EDimensionless) {
         fDisplayUnit->hide();
         return;
     }
-    fDisplayUnit->show();
+	fDisplayUnit->show();
 }
 
 bool VLDFUnitInput::isEnabled() const {
