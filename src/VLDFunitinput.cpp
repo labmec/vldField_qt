@@ -214,7 +214,7 @@ void VLDFUnitInput::setUnitType(const EUnitType & unittp) {
         fDisplayUnit->addItem("Pa", QVariant("MPa"));
         fDisplayUnit->addItem("psi", QVariant("MPa"));
         fDisplayUnit->addItem("ppg", QVariant("MPa"));
-    } else if (fUnitType == EInvertedPressure) {
+    } else if (fUnitType == EInvertedPressure) {             // same as Compressibility
         fDisplayUnit->addItem("1/MPa", QVariant("1/MPa"));
         fDisplayUnit->addItem("1/Pa", QVariant("1/MPa"));
         fDisplayUnit->addItem("1/psi", QVariant("1/MPa"));
@@ -231,6 +231,19 @@ void VLDFUnitInput::setUnitType(const EUnitType & unittp) {
         fDisplayUnit->addItem("darcy", QVariant("m^2"));
         fDisplayUnit->addItem("millidarcy", QVariant("m^2"));
         fDisplayUnit->addItem("m^2", QVariant("m^2"));
+    }
+    else if (fUnitType == EViscosity) {
+        fDisplayUnit->addItem("Pa s", QVariant("Pa s"));
+        fDisplayUnit->addItem("poise", QVariant("Pa s"));
+        fDisplayUnit->addItem("centipoise", QVariant("Pa s"));
+    }
+    else if (fUnitType == EDensity) {
+        fDisplayUnit->addItem("kg/m^3", QVariant("kg/m^3"));
+        fDisplayUnit->addItem("lb/ft^3", QVariant("kg/m^3"));
+    }
+    else if (fUnitType == EIP) {
+        fDisplayUnit->addItem("m^3/Pa s", QVariant("m^3/Pa s"));
+        fDisplayUnit->addItem("m^3/MPa s", QVariant("m^3/Pa s"));
     }
     else if (fUnitType == EDimensionless) {
         fDisplayUnit->hide();

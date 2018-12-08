@@ -1,7 +1,7 @@
 
 VLDFIELD_QT_VER_MAJ      = 1
 VLDFIELD_QT_VER_MIN      = 0
-VLDFIELD_QT_VER_PAT      = 1
+VLDFIELD_QT_VER_PAT      = 0
 VLDFIELD_QT_VERSION      = $${VLDFIELD_QT_VER_MAJ}.$${VLDFIELD_QT_VER_MIN}.$${VLDFIELD_QT_VER_PAT}
 
 ######################################################################
