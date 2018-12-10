@@ -233,17 +233,19 @@ void VLDFUnitInput::setUnitType(const EUnitType & unittp) {
         fDisplayUnit->addItem("m^2", QVariant("m^2"));
     }
     else if (fUnitType == EViscosity) {
-        fDisplayUnit->addItem("Pa s", QVariant("Pa s"));
-        fDisplayUnit->addItem("poise", QVariant("Pa s"));
-        fDisplayUnit->addItem("centipoise", QVariant("Pa s"));
+        fDisplayUnit->addItem("Pa s", QVariant("MPa s"));
+        fDisplayUnit->addItem("poise", QVariant("MPa s"));
+        fDisplayUnit->addItem("centipoise", QVariant("MPa s"));
     }
     else if (fUnitType == EDensity) {
         fDisplayUnit->addItem("kg/m^3", QVariant("kg/m^3"));
         fDisplayUnit->addItem("lb/ft^3", QVariant("kg/m^3"));
     }
     else if (fUnitType == EIP) {
-        fDisplayUnit->addItem("m^3/Pa s", QVariant("m^3/Pa s"));
-        fDisplayUnit->addItem("m^3/MPa s", QVariant("m^3/Pa s"));
+        fDisplayUnit->addItem("m^3/MPa /day", QVariant("m^3/MPa /s"));
+        fDisplayUnit->addItem("m^3/Pa /s", QVariant("m^3/MPa /s"));
+        fDisplayUnit->addItem("m^3/MPa /s", QVariant("m^3/MPa /s"));
+        fDisplayUnit->addItem("barrel/psi /day", QVariant("m^3/MPa /s"));
     }
     else if (fUnitType == EDimensionless) {
         fDisplayUnit->hide();
