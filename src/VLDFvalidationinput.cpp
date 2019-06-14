@@ -125,7 +125,7 @@ bool VLDFValidationInput::changeLineEditValidationInfo() {
         } 
 		else
 		{
-            newAction->setIcon(QApplication::style()->standardIcon(QStyle::SP_MessageBoxCritical));
+            newAction->setIcon(QApplication::style()->standardIcon(QStyle::SP_DialogCancelButton));
 			emit validityChanged(false); // aciona SLOT VLDFValidationController::checkInputsValidity(const bool)
 		}
         mLineEdit->addAction(newAction, QLineEdit::TrailingPosition);
