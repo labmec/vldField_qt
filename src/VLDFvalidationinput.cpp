@@ -58,9 +58,9 @@ VLDFValidationInput::~VLDFValidationInput() {
  */
 bool VLDFValidationInput::isValid() const {
 	if (mMustValidate)
-		return mLineEdit->hasAcceptableInput() && mAdditionalValidationRule();
+           return mLineEdit->hasAcceptableInput() && mAdditionalValidationRule();
 	else
-		return true; 
+           return true;
 }
 
 void VLDFValidationInput::checkDependencies() {
@@ -93,8 +93,9 @@ bool VLDFValidationInput::attendsRecomendation() const {
 bool VLDFValidationInput::appendDependency(VLDFValidationInput *dependencyField) {
     if(!dependencyField)
         return false;
+
     mDependencies.append(dependencyField);
-	return true;
+    return true;
 }
 
 /**
@@ -104,35 +105,37 @@ bool VLDFValidationInput::appendDependency(VLDFValidationInput *dependencyField)
  * second after the user typed.
  */
 bool VLDFValidationInput::changeLineEditValidationInfo() {
+
     if(mLineEdit)
-	{
+    {
         if(mLineEdit->actions().size() != 0) 
-		{
+        {
             clearValidationInfo();
         }
         QAction *newAction = new QAction();
         if(this->isValid())
-		{
+        {
             if(attendsRecomendation())
-			{
+            {
                 newAction->setIcon(QApplication::style()->standardIcon(QStyle::SP_DialogApplyButton));
-				emit validityChanged(true); // invokes SLOT VLDFValidationController::checkInputsValidity(const bool)
-			} 
-			else
-			{
+                emit validityChanged(true); // invokes SLOT VLDFValidationController::checkInputsValidity(const bool)
+            }
+            else
+            {
                 newAction->setIcon(QApplication::style()->standardIcon(QStyle::SP_MessageBoxWarning));
             }
         } 
-		else
-		{
+        else
+        {
             newAction->setIcon(QApplication::style()->standardIcon(QStyle::SP_DialogCancelButton));
-			emit validityChanged(false); // aciona SLOT VLDFValidationController::checkInputsValidity(const bool)
-		}
+            emit validityChanged(false); // aciona SLOT VLDFValidationController::checkInputsValidity(const bool)
+        }
+
         mLineEdit->addAction(newAction, QLineEdit::TrailingPosition);
-		emit validationInfoChanged();
-		return true;
+        emit validationInfoChanged();
+        return true;
     }
-	else 
+    else
         return false;
     
 }
