@@ -32,11 +32,14 @@ public:
     void setPopupMessageEnabled(bool enable);
     bool appendDependency(QLineEdit *dependantField, QLineEdit *dependencyField);
 
-	bool softRegisterLineEdit(QLineEdit *lineEdit);
-	void softUnregisterAllLineEdits();
-	void updateButtonsState(bool newValidState);
+    bool softRegisterLineEdit(QLineEdit *lineEdit);
+    void softUnregisterAllLineEdits();
+    void updateButtonsState(bool newValidState);
 
-private slots:
+    bool isCurrentStateValid;
+
+
+public slots:
     void checkInputsValidity(const bool inputBecameValid);
     void setControlButtonsEnabled(bool enable);
 
@@ -46,7 +49,6 @@ private:
     // TODO change this to a hash of LineEdit to TPZAutoPointer
     QHash<QLineEdit *, VLDFValidationInput*> mInputs;
     QList<QAbstractButton *> mControlButtons;
-    bool isCurrentStateValid;
     VLDFPopupMessage mPopup;
     bool mIsPopupEnabled;
 
