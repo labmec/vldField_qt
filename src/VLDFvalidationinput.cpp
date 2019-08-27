@@ -79,6 +79,7 @@ void VLDFValidationInput::updateValidation() {
  * @brief Removes the validation icons at this input
  */
 void VLDFValidationInput::clearValidationInfo()  {
+
     QList<QAction *> actions = mLineEdit->actions();
     for(QAction *action : actions) {
         mLineEdit->removeAction(action);

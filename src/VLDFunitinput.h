@@ -53,6 +53,9 @@ public:
     static QString fTmpDefsUnitsFileName;
     static void setupUnitsFile();
 
+    VLDFDoubleLineEdit *fDisplayValue;
+
+
 signals:
     void valueChanged(double newValue);
     void siValueChanged(const double newSiValue);
@@ -62,7 +65,6 @@ public slots:
     void changeUnit(int idx);
 
 private:
-    VLDFDoubleLineEdit *fDisplayValue;
 
     double fSIValue;
     EUnitType fUnitType;
